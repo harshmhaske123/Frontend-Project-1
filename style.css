@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Freight Big Pro Light;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    background-color: black;
+}
+
+#loader {
+    background-color: rgba(0, 0, 0, 0.32);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    z-index: 99;
+    /* display: none; */
+
+}
+
+#yellow1 {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 14;
+    background-color: #F5E41B;
+}
+
+#black {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 8;
+    background-color: black;
+}
+
+#yellow2 {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    background-color: #F5E41B;
+}
+
+
+#loader video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 6;
+}
+
+#loader h1 {
+    position: relative;
+    font-size: 6.9vw;
+    font-weight: 100;
+    line-height: 5vw;
+    letter-spacing: -0.2vw;
+    z-index: 11;
+}
+
+#page1 {
+    background-color: #F5E41B;
+    /* background-color: darkorange; */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+#nav-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2.5vw 4vw;
+}
+
+#nav-left svg {
+    filter: invert(1);
+}
+
+#nav-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2.2vw 4vw;
+}
+
+#nav-right a {
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2vw;
+    margin-left: 3.6vw;
+
+}
+
+#nav-right a:nth-child(3) {
+    margin-right: 3.6vw;
+
+}
+
+#nav-right i {
+    font-size: 2.2vw;
+    font-weight: 100;
+    transform: rotate(225deg);
+
+}
+
+#bottom {
+    display: flex;
+    align-items: center;
+
+}
+
+#bottom .elem a {
+    font-size: 1.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-decoration: none;
+}
+
+#bottom .elem:nth-child(1) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2.5vw 3.9vw;
+}
+
+#bottom .elem:nth-child(2) {
+    position: absolute;
+    bottom: 0;
+    left: 48%;
+    font-size: 4vw;
+    padding: 1vw 0vw;
+    font-weight: 100;
+}
+
+#bottom .elem:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 2.5vw 3.9vw;
+}
+
+#page1 h1 {
+    font-size: 6.9vw;
+    font-weight: 100;
+    line-height: 5vw;
+    letter-spacing: -0.2vw;
+    user-select: none;
+}
+
+#page2 {
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+#page2 .elem {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.elem h2 {
+    font-size: 7vw;
+    font-weight: 100;
+    color: #FFFFFF;
+    line-height: 5.2vw;
+
+
+}
+
+.elem .moving {
+    background-color: #F5E41B;
+    /* background-color: darkorange; */
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -45%) scaleY(0);
+    z-index: -1;
+    opacity: 0;
+    transition: all ease 0.3s;
+
+}
+
+.elem .moving .moving-in {
+
+    display: inline-block;
+    animation-name: moving;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.elem .moving .moving-in h5 {
+    font-size: 1.2vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    padding: 0.5vw 1vw;
+    display: inline-block;
+}
+
+@keyframes moving {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.elem:hover .moving {
+    opacity: 1;
+    transform: translate(0, -45%) scaleY(1);
+}
+
+.elem:hover h2 {
+    font-style: italic;
+    color: black;
+}
+
+
+#page3 {
+    background-color: #FFFFFF;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    /* position: relative; */
+
+}
+
+#page3 .image-cont {
+    height: 40vw;
+    width: 30vw;
+    background-color: gray;
+    margin-top: 2vw;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.image-cont .elem {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.244);
+    transition: all ease 350ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.image-cont .elem P {
+    font-size: 3vw;
+    color: white;
+    font-family: Freight Big Pro Light;
+    line-height: 3vw;
+    opacity: 0;
+}
+
+#page3 .image-cont:hover .elem {
+    background-color: black;
+}
+#page3 .image-cont:hover .elem p{
+    opacity: 1;
+}
+
+#page3 .image-cont img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    transition: all ease 250ms;
+}
+
+#page4 .top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 3vw 0vw;
+    user-select: none;
+}
+
+#page4 .elem i {
+    font-size: 3vw;
+    font-weight: 100;
+
+}
+
+#page4 .elem:nth-child(2) {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2vw;
+    cursor: default;
+}
+
+#page4 {
+    width: 100%;
+    min-height: 10vh;
+}
+
+#page5 {
+    width: 100%;
+    min-height: 15vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2vw;
+    padding: 0vw 3.5vw;
+}
+
+#page5 #right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#page5 #left a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#page5 #right a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0vw 1.5vw;
+
+}
